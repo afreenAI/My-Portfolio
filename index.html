@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-content">
+            <div class="profile-container">
+                <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
+            </div>
+            <div class="intro-text">
+                <h1>Afreen Imam</h1>
+                <h3 class="subtitle">Undergraduate Data Science Engineer</h3>
+                <p class="intro-paragraph">
+                    Welcome to my portfolio! I am a dedicated Computer Science and Data Science Engineering student with a passion for problem-solving and innovation in the tech world. I enjoy building solutions that combine creativity and technical expertise. My interests span across web development, data science, AI, and machine learning. I aim to contribute to projects that drive meaningful change.
+                </p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <br>
+        <div class="skill-card">
+            <div class="skill">
+                <img src="images/icons8-html-48.png" alt="HTML">
+                <p>HTML</p>
+                <div class="progress-bar"><div class="progress html"></div></div>
+            </div>
+            <div class="skill">
+                <img src="images/icons8-css-48.png" alt="CSS">
+                <p>CSS</p>
+                <div class="progress-bar"><div class="progress css"></div></div>
+            </div>
+            <div class="skill">
+                <img src="images/icons8-javascript-50.png" alt="JavaScript">
+                <p>JavaScript</p>
+                <div class="progress-bar"><div class="progress js"></div></div>
+            </div>
+            <div class="skill">
+                <img src="images/icons8-c-48.png" alt="C Language">
+                <p>C</p>
+                <div class="progress-bar"><div class="progress c"></div></div>
+            </div>
+            <div class="skill">
+                <img src="images/icons8-java-48.png" alt="Java">
+                <p>Java</p>
+                <div class="progress-bar"><div class="progress java"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <br>
+        <div class="project-card">
+            <div class="project">
+                <a href="https://github.com/afreenAI/Basic-Calculator.git" target="_blank" class="project-link">
+                    <img src="images/calculator.png" alt="Basic Calculator">
+                    <h3>Basic Calculator</h3>
+                </a>
+            </div>
+            
+            <div class="project">
+                <a href="https://github.com/afreenAI/Student-Management-System.git" target="_blank" class="project-link">
+                <img src="images/student-management.png" alt="Student Management System">
+                <h3>Student Management System</h3>
+            </a>
+            </div>
+            <div class="project">
+                <a href="https://github.com/afreenAI/Tic-Tac-Toe.git" target="_blank" class="project-link">
+                <img src="images/tic-tac-toe.png" alt="Tic Tac Toe">
+                <h3>Tic-Tac-Toe Game</h3>
+            </a>
+            </div>
+            <div class="project">
+                <a href="https://github.com/afreenAI/Currency-Converter.git" target="_blank" class="project-link">
+                <img src="images/currency-converter.png" alt="Currency Converter">
+                <h3>Currency Converter</h3>
+                </a>
+            </div>
+            <div class="project">
+                <a href="https://github.com/afreenAI/Solar-System-Project.git" target="_blank" class="project-link">
+                <img src="images/solar-system.png" alt="Solar System Simulation">
+                <h3>Solar System Simulation</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <h2>Get in Touch</h2>
+        <p>If you’d like to chat about a project or just say hello, feel free to drop a message!</p>
+
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <form class="contact-form" action="https://formspree.io/f/mdkoelkd" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Type your message here" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p>Follow me on social media or drop me an email!</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/afreen-imam-b45449289/" class="social-link">
+                        <img src="images/icons8-linkedin-48.png" alt="LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/afreenAI" class="social-link">
+                        <img src="images/icons8-github-48 (1).png" alt="GitHub">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="afreenimam804@gmail.com" class="social-link">
+                        <img src="images/icons8-email-48.png" alt="Email">
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
