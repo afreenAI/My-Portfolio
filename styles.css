@@ -80,7 +80,7 @@ h2 {
 }
 
 .intro-paragraph {
-  font-size: 1.1em;
+  font-size: 1.0em;
   line-height: 1.6;
   color: #e0e0e0;
   margin-bottom: 30px;
@@ -96,7 +96,7 @@ h2 {
   border: none;
   border-radius: 25px;
   text-decoration: none;
-  margin-right: 15px;
+  margin-right: 17px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
