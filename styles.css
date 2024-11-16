@@ -133,10 +133,10 @@ h2 {
 }
 
 .c { width: 80%; background: #6ba0c9; }
-.java { width: 70%; background: #ffa726; }
-.html { width: 90%; background: #ddcd1e; }
-.css { width: 85%; background: #42a5f5; }
-.js { width: 75%; background: #fbc02d; }
+.java { width: 68%; background: #ffa726; }
+.html { width: 80%; background: #ddcd1e; }
+.css { width: 70%; background: #42a5f5; }
+.js { width: 60%; background: #fbc02d; }
 
 /* Projects Section */
 .project-card {
