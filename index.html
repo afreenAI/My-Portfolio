@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afreen Imam - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { primary: '#3b82f6', secondary: '#6366f1' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="relative">
+
+  <div id="particles-js"></div>
+  <div id="top"></div>
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-white bg-opacity-95 backdrop-blur-sm shadow-sm z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#top" class="text-2xl font-['Pacifico'] text-primary ml-6">Afreen</a>
+      <nav class="hidden md:flex items-center space-x-8 mr-6">
+        <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+        <a href="#projects" class="text-gray-700 hover:text-primary font-medium transition-colors">Projects</a>
+        <a href="#skills" class="text-gray-700 hover:text-primary font-medium transition-colors">Skills</a>
+        <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+        <i class="ri-menu-line ri-lg"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu flex-col items-center py-4 bg-white shadow-md md:hidden">
+      <a href="#about" class="w-full text-center py-3 text-gray-700 hover:bg-gray-50">About</a>
+      <a href="#projects" class="w-full text-center py-3 text-gray-700 hover:bg-gray-50">Projects</a>
+      <a href="#skills" class="w-full text-center py-3 text-gray-700 hover:bg-gray-50">Skills</a>
+      <a href="#contact" class="w-full text-center py-3 text-gray-700 hover:bg-gray-50">Contact</a>
+    </div>
+  </header>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden ">
+    <div id="particles-js"></div>
+    <div class="absolute inset-0 z-0">
+      <div style="background-image: url('images/bg.jpg');" class="w-full h-full bg-cover bg-center object-top"></div>
+    </div>
+    <div class="container mx-auto px-6 z-10 w-full">
+      <div class="hero-gradient md:w-3/5 w-full py-16 px-6 md:px-12 ml-6">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+          Hi, I'm <span class="text-primary">Afreen Imam</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-800 mb-6">
+          <span id="typing-text" class="text-blue-700 italic"></span>
+        </p>
+        <p class="text-gray-1000 mb-8 text-lg leading-relaxed">
+          On a journey from curiosity to creation.
+          <br>
+          <span class="calligraphic">Learning. Building. Growing.</span>
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="images/myResume.pdf" download
+            class="btn-primary whitespace-nowrap !rounded-button flex items-center">
+            <span class="w-5 h-5 flex items-center justify-center mr-2">
+              <i class="ri-download-line"></i>
+            </span>
+            Download CV
+          </a>
+          <a href="#contact" class="btn-secondary whitespace-nowrap !rounded-button flex items-center">
+            <span>Get in Touch</span>
+            <span class="w-5 h-5 flex items-center justify-center ml-2">
+              <i class="ri-arrow-right-line"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="main-container">
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-transparent">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+          <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <div class="rounded-lg overflow-hidden shadow-lg bg-gradient-to-br from-blue-50 to-indigo-50 p-8">
+              <img src="images/image.png" alt="Data Science Illustration"
+                class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-105">
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold text-gray-900 mb-4">About Me</h3>
+            <p class="text-gray-700 mb-8 text-lg leading-relaxed">
+              I'm an undergraduate Data Science Engineering student with a strong interest in technology and its
+              potential
+              to create real-world impact. Currently exploring the foundations of software development, problem-solving,
+              and intelligent systems, I enjoy learning by building and experimenting.
+              <br>
+              <br>
+              My journey is driven by curiosity and a desire to grow — one step at a time — as I work toward becoming a
+              problem-solver in the tech world. I'm focused on developing a strong foundation, collaborating on
+              meaningful
+              projects, and learning from every opportunity that comes my way.
+            </p>
+            <p class="calligraphic">
+              “With every line of code, I grow — driven by passion, guided by curiosity”
+            </p>
+
+            <div class="mt-6">
+              <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">Soft Skills</h4>
+              <div class="flex flex-wrap justify-center gap-3">
+                <span
+                  class="inline-block bg-blue-100 text-blue-800 font-medium px-4 py-2 rounded-full shadow-sm">Communication</span>
+                <span
+                  class="inline-block bg-green-100 text-green-800 font-medium px-4 py-2 rounded-full shadow-sm">Teamwork</span>
+                <span
+                  class="inline-block bg-yellow-100 text-yellow-800 font-medium px-4 py-2 rounded-full shadow-sm">Leadership</span>
+                <span
+                  class="inline-block bg-purple-100 text-purple-800 font-medium px-4 py-2 rounded-full shadow-sm">Adaptability</span>
+                <span
+                  class="inline-block bg-pink-100 text-pink-800 font-medium px-4 py-2 rounded-full shadow-sm">Problem
+                  Solving</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Education Section -->
+    <section id="education" class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4 animate__animated animate__fadeInDown">Education</h2>
+          <p class="text-gray-600 max-w-xl mx-auto animate__animated animate__fadeInDown animate__delay-1s">
+            Here's a quick look at my academic journey.
+          </p>
+          <div
+            class="w-24 h-1 bg-primary mx-auto rounded-full mt-4 animate__animated animate__fadeInDown animate__delay-1s">
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="education-card opacity-0 bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
+            <h3 class="text-xl font-semibold text-gray-800 mb-1">Bachelor of Engineering (B.E)</h3>
+            <p class="text-sm text-gray-700 italic mb-2">Computer Science & Engineering - Data Science</p>
+            <p class="text-primary font-medium">Anjuman-I-Islam's Kalsekar Technical Campus</p>
+            <p class="text-gray-600 text-sm mt-2">2023 - 2027</p>
+            <p class="text-gray-600 text-sm">GPA: <span class="font-semibold text-gray-800">8.96</span></p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="education-card opacity-0 bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
+            <h3 class="text-xl font-semibold text-gray-800 mb-1">Higher Secondary Certificate (HSC)</h3>
+            <p class="text-primary font-medium">Stepping Stone Inter College</p>
+            <p class="text-gray-600 text-sm mt-2">2020 - 2022</p>
+            <p class="text-gray-600 text-sm">Percentage: <span class="font-semibold text-gray-800">80.6%</span></p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="education-card opacity-0 bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500">
+            <h3 class="text-xl font-semibold text-gray-800 mb-1">Secondary School Certificate (SSC)</h3>
+            <p class="text-primary font-medium">Stepping Stone Inter College</p>
+            <p class="text-gray-600 text-sm mt-2">2018 - 2020</p>
+            <p class="text-gray-600 text-sm">Percentage: <span class="font-semibold text-gray-800">80.8%</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Projects</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Explore some of my recent work that showcases my skills.</p>
+          <div class="w-20 h-1 bg-primary mx-auto rounded-full mt-4"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+          <!-- Project 1 -->
+          <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+            <div class="h-56 overflow-hidden">
+              <img src="images/student-management.png" alt="Student Management System"
+                class="w-full h-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Student Management System</h3>
+              <p class="text-gray-600 mb-4">A Java-based System that allows adding, searching, updating, and deleting
+                student records for efficient data management.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Java</span>
+                <span class="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">Java Swing</span>
+                <span class="text-xs bg-purple-100 text-purple-800 px-3 py-1 rounded-full">MySQL</span>
+                <span class="text-xs bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">JDBC</span>
+              </div>
+              <a href="https://github.com/afreenAI/Student-Management-System.git"
+                class="text-primary font-medium flex items-center hover:underline">
+                View Project
+                <span class="w-5 h-5 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+            <div class="h-56 overflow-hidden">
+              <img src="images/virtual-art-gallery.png" alt="Virtual Art Gallery" class="w-full h-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Virtual Art Gallery</h3>
+              <p class="text-gray-600 mb-4">A responsive platform for art lovers to explore and enjoy artworks in
+                Abstract, Nature, and Portrait categories.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">HTML</span>
+                <span class="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">CSS</span>
+                <span class="text-xs bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">JavaScript</span>
+              </div>
+              <a href="https://github.com/afreenAI/Virtual-Art-Gallery.git"
+                class="text-primary font-medium flex items-center hover:underline">
+                View Project
+                <span class="w-5 h-5 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+            <div class="h-56 overflow-hidden">
+              <img src="images/currency-converter.png" alt="Currency-Converter" class="w-full h-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Currency Converter</h3>
+              <p class="text-gray-600 mb-4">A Java GUI application for converting currencies using real-time exchange
+                rates from an external API.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Java</span>
+                <span class="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">Java Swing</span>
+                <span class="text-xs bg-purple-100 text-purple-800 px-3 py-1 rounded-full">HTTPURLConnection</span>
+                <span class="text-xs bg-red-100 text-red-800 px-3 py-1 rounded-full">JSON</span>
+              </div>
+              <a href="https://github.com/afreenAI/Currency-Converter.git"
+                class="text-primary font-medium flex items-center hover:underline">
+                View Project
+                <span class="w-5 h-5 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- Project 4 (initially hidden)-->
+          <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hidden-project" style="display:none;">
+            <div class="h-56 overflow-hidden">
+              <img src="images/serenai.png" alt="SEREN-AI" class="w-full h-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">SEREN-AI</h3>
+              <p class="text-gray-600 mb-4">An AI-powered study assistant designed to make learning smarter and more
+                efficient.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">React.Js</span>
+                <span class="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">Flask</span>
+                <span class="text-xs bg-red-100 text-red-800 px-3 py-1 rounded-full">API</span>
+                <span class="text-xs bg-purple-100 text-purple-800 px-3 py-1 rounded-full">JavaScript</span>
+              </div>
+              <a href="https://github.com/afreenAI/SERENAI.git"
+                class="text-primary font-medium flex items-center hover:underline">
+                View Project
+                <span class="w-5 h-5 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- Project 5 (initially hidden)-->
+          <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hidden-project" style="display:none;">
+            <div class="h-56 overflow-hidden">
+              <img src="images/tic-tac-toe.png" alt="Tic-Tac-Toe Game" class="w-full h-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Tic-Tac-Toe Game</h3>
+              <p class="text-gray-600 mb-4">A web-based Tic-Tac-Toe game using HTML, CSS, and JavaScript, featuring
+                two-player and AI modes with adjustable difficulty.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">HTML</span>
+                <span class="text-xs bg-red-100 text-red-800 px-3 py-1 rounded-full">CSS</span>
+                <span class="text-xs bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">JavaScript</span>
+              </div>
+              <a href="https://github.com/afreenAI/Tic-Tac-Toe.git"
+                class="text-primary font-medium flex items-center hover:underline">
+                View Project
+                <span class="w-5 h-5 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- Project 6 (initially hidden)-->
+          <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hidden-project" style="display:none;">
+            <div class="h-56 overflow-hidden">
+              <img src="images/solar-system.png" alt="Solar System Simulation" class="w-full h-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Solar System Simulation</h3>
+              <p class="text-gray-600 mb-4">A Pygame-based Solar System Simulation with orbiting planets, labeled
+                orbits,
+                a starry background, and background music.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Python</span>
+                <span class="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full">Pygame</span>
+                <span class="text-xs bg-purple-100 text-purple-800 px-3 py-1 rounded-full">MP3 BG Music</span>
+              </div>
+              <a href="https://github.com/afreenAI/Solar-System-Project.git"
+                class="text-primary font-medium flex items-center hover:underline">
+                View Project
+                <span class="w-5 h-5 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- Project 7 (initially hidden)-->
+          <div class="project-card bg-white rounded-lg overflow-hidden shadow-md hidden-project" style="display:none;">
+            <div class="h-56 overflow-hidden">
+              <img src="images/Snake-water.jpg" alt=" Snake-Water-Gun Game" class="w-full h-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Snake-Water-Gun Game</h3>
+              <p class="text-gray-600 mb-4">Welcome to the Snake-Water-Gun Game — a fun Python project where you play
+                against the computer!.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Python</span>
+              </div>
+              <a href="https://github.com/afreenAI/Snake-Water-Gun-game.git"
+                class="text-primary font-medium flex items-center hover:underline">
+                View Project
+                <span class="w-5 h-5 flex items-center justify-center ml-1">
+                  <i class="ri-arrow-right-line"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- Project 8 (initially hidden)-->
+        </div>
+        <div class="text-center mt-12">
+          <button id="toggle-projects" class="btn-primary whitespace-nowrap !rounded-button inline-flex items-center">
+            <span>View All Projects</span>
+            <span class="w-5 h-5 flex items-center justify-center ml-2">
+              <i class="ri-arrow-right-line"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-transparent">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Skills</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">I've developed expertise in programming languages and technologies.
+          </p>
+          <div class="w-20 h-1 bg-primary-600 mx-auto rounded-full mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
+          <!-- Skill Card Template -->
+          <div class="skill-card">
+            <div class="relative w-[180px] h-[180px] mx-auto">
+              <canvas id="Python" width="180" height="180"></canvas>
+              <img class="skill-logo"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+            </div>
+            <div class="text-center mt-4">
+              <div class="text-lg font-semibold text-gray-800">Python</div>
+              <div class="text-sm text-gray-500 percent-label" data-id="Python">0%</div>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="relative w-[180px] h-[180px] mx-auto">
+              <canvas id="Java" width="180" height="180"></canvas>
+              <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                alt="Java">
+            </div>
+            <div class="text-center mt-4">
+              <div class="text-lg font-semibold text-gray-800">Java</div>
+              <div class="text-sm text-gray-500 percent-label" data-id="Java">0%</div>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="relative w-[180px] h-[180px] mx-auto">
+              <canvas id="HTML" width="180" height="180"></canvas>
+              <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt="HTML">
+            </div>
+            <div class="text-center mt-4">
+              <div class="text-lg font-semibold text-gray-800">HTML</div>
+              <div class="text-sm text-gray-500 percent-label" data-id="HTML">0%</div>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="relative w-[180px] h-[180px] mx-auto">
+              <canvas id="CSS" width="180" height="180"></canvas>
+              <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt="CSS">
+            </div>
+            <div class="text-center mt-4">
+              <div class="text-lg font-semibold text-gray-800">CSS</div>
+              <div class="text-sm text-gray-500 percent-label" data-id="CSS">0%</div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <div class="relative w-[180px] h-[180px] mx-auto">
+              <canvas id="JavaScript" width="180" height="180"></canvas>
+              <img class="skill-logo"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript">
+            </div>
+            <div class="text-center mt-4">
+              <div class="text-lg font-semibold text-gray-800">JavaScript</div>
+              <div class="text-sm text-gray-500 percent-label" data-id="JavaScript">0%</div>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="relative w-[180px] h-[180px] mx-auto">
+              <canvas id="C" width="180" height="180"></canvas>
+              <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+            </div>
+            <div class="text-center mt-4">
+              <div class="text-lg font-semibold text-gray-800">C</div>
+              <div class="text-sm text-gray-500 percent-label" data-id="C">0%</div>
+            </div>
+          </div>
+
+
+          <div class="skill-card">
+            <div class="relative w-[180px] h-[180px] mx-auto">
+              <canvas id="MySQL" width="180" height="180"></canvas>
+              <img class="skill-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                alt="MySQL">
+            </div>
+            <div class="text-center mt-4">
+              <div class="text-lg font-semibold text-gray-800">MySQL</div>
+              <div class="text-sm text-gray-500 percent-label" data-id="MySQL">0%</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates-section py-20 bg-transparent">
+      <div class="container mx-auto px-6">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Certificates</h2>
+          <p class="text-gray-600 max-w-xl mx-auto">These certificates reflect my learning and achievements.</p>
+          <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Certificate Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Certificate Card 1 -->
+          <div
+            class="certificate-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 hover:shadow-xl transition duration-300">
+            <div class="certificate-image-wrapper h-56 flex items-center justify-center bg-gray-100">
+              <img src="images/certificate1.jpg" alt="certificate1" class="max-h-full max-w-full object-contain">
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-gray-800">Programming In Java</h3>
+              <p class="text-sm text-gray-600 mb-4">Certified by NPTEL for completing the Programming in Java Course.
+              </p>
+              <button class="view-certificate-btn cursor-pointer text-primary font-medium hover:underline"
+                onclick="openCertificateModal('images/certificate1.jpg')">
+                View Certificate
+              </button>
+            </div>
+          </div>
+
+          <!-- Certificate Card 2 -->
+          <div
+            class="certificate-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 hover:shadow-xl transition duration-300">
+            <div class="certificate-image-wrapper h-56 flex items-center justify-center bg-gray-100">
+              <img src="images/certificate2.jpg" alt="certificate2" class="max-h-full max-w-full object-contain">
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-gray-800">Career Essentials in Gen AI</h3>
+              <p class="text-sm text-gray-600 mb-4">Certified by Microsoft & LinkedIn for completing the Gen AI Course.
+              </p>
+              <button class="view-certificate-btn cursor-pointer text-primary font-medium hover:underline"
+                onclick="openCertificateModal('images/certificate2.jpg')">
+                View Certificate
+              </button>
+            </div>
+          </div>
+
+          <!-- Certificate Card 3 -->
+          <div
+            class="certificate-card bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 hover:shadow-xl transition duration-300">
+            <div class="certificate-image-wrapper h-56 flex items-center justify-center bg-gray-100">
+              <img src="images/certificate3.jpg" alt="certificate3" class="max-h-full max-w-full object-contain">
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-gray-800">Python for Data Science</h3>
+              <p class="text-sm text-gray-600 mb-4">Certified by NPTEL for completing the Python for Data Science
+                Course.
+              </p>
+              <button class="view-certificate-btn cursor-pointer text-primary font-medium hover:underline"
+                onclick="openCertificateModal('images/certificate3.jpg')">
+                View Certificate
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal"
+      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+      <div class="relative bg-white rounded-lg p-4 max-w-4xl w-full">
+        <span class="absolute top-2 right-4 text-2xl cursor-pointer text-gray-700 hover:text-red-600"
+          onclick="closeCertificateModal()">&times;</span>
+        <img id="certificateModalImage" src="" alt="Full Certificate" class="w-full h-auto rounded">
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Have a project in mind or want to discuss potential opportunities?
+            I'd love to hear from you!</p>
+          <div class="w-20 h-1 bg-primary mx-auto rounded-full mt-4"></div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-12 bg-gray-50">
+          <div class="lg:w-1/2">
+            <form id="contact-form" action="https://formspree.io/f/mvgrgadg" method="POST" class="space-y-6">
+              <div>
+                <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+                <input type="text" id="name" name="name"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="Your name"
+                  required>
+              </div>
+              <div>
+                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                <input type="email" id="email" name="email"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary"
+                  placeholder="Your email address" required>
+              </div>
+              <div>
+                <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                <input type="text" id="subject" name="subject"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary"
+                  placeholder="What is this regarding?" required>
+              </div>
+              <div>
+                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                <textarea id="message" name="message" rows="5"
+                  class="w-full px-4 py-3 border border-gray-300 rounded resize-none focus:border-primary"
+                  placeholder="Your message" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary whitespace-nowrap !rounded-button flex items-center">
+                <span>Send Message</span>
+                <span class="w-5 h-5 flex items-center justify-center ml-2">
+                  <i class="ri-send-plane-line"></i>
+                </span>
+              </button>
+            </form>
+          </div>
+          <div class="lg:w-1/2">
+            <div class="bg-gray-50 p-8 rounded-lg h-full">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mr-4">
+                    <i class="ri-map-pin-line ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-medium text-gray-800 mb-1">Location</h4>
+                    <p class="text-gray-600">Mumbai, India</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary mr-4">
+                    <i class="ri-mail-line ri-lg"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-medium text-gray-800 mb-1">Email</h4>
+                    <a href="mailto:afreenimam804@gmail.com"
+                      class="text-gray-600 hover:text-primary">afreenimam804@gmail.com</a>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8">
+                <h4 class="text-lg font-medium text-gray-800 mb-4">Connect With Me</h4>
+                <div class="flex space-x-4">
+                  <a href="https://www.linkedin.com/in/afreen-imam-b45449289/"
+                    class="w-10 h-10 flex items-center justify-center bg-gray-200 hover:bg-primary hover:text-white rounded-full transition-colors">
+                    <i class="ri-linkedin-fill ri-lg"></i>
+                  </a>
+                  <a href="https://github.com/afreenAI"
+                    class="w-10 h-10 flex items-center justify-center bg-gray-200 hover:bg-primary hover:text-white rounded-full transition-colors">
+                    <i class="ri-github-fill ri-lg"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Footer -->
+  <footer class="relative bg-gray-900 text-white py-12">
+    <!-- Particles container inside footer -->
+    <div id="footer-particles" class="absolute inset-0 -z-10 pointer-events-none"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <a class="text-2xl font-['Pacifico'] text-white">Afreen</a>
+          <p class="mt-2 text-gray-400">Creating digital experiences that matter.</p>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-8">
+          <a href="#about" class="text-gray-300 hover:text-white transition-colors">About</a>
+          <a href="#projects" class="text-gray-300 hover:text-white transition-colors">Projects</a>
+          <a href="#skills" class="text-gray-300 hover:text-white transition-colors">Skills</a>
+          <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400">© 2025 Afreen Imam. All rights reserved.</p>
+        <div class="mt-4 md:mt-0 flex space-x-4">
+          <a href="https://www.linkedin.com/in/afreen-imam-b45449289/"
+            class="text-gray-400 hover:text-white transition-colors">
+            <span class="w-6 h-6 flex items-center justify-center">
+              <i class="ri-linkedin-fill ri-lg"></i>
+            </span>
+          </a>
+          <a href="https://github.com/afreenAI" class="text-gray-400 hover:text-white transition-colors">
+            <span class="w-6 h-6 flex items-center justify-center">
+              <i class="ri-github-fill ri-lg"></i>
+            </span>
+          </a>
+          <a href="mailto:afreenimam804@gmail.com" class="text-gray-400 hover:text-white transition-colors">
+            <span class="w-6 h-6 flex items-center justify-center">
+              <i class="ri-mail-fill ri-lg"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- particles.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Custom init -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 60,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#3b82f6" /* lighter blue */
+        },
+        "opacity": {
+          "value": 0.8,
+          "random": true
+        },
+        "size": {
+          "value": 4,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#4a7acc",
+          "opacity": 0.4,
+          "width": 1.5
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 0.6
+            }
+          },
+          "push": {
+            "particles_nb": 4
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+</body>
+
+</html>
