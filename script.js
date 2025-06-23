@@ -365,9 +365,9 @@ document.addEventListener('DOMContentLoaded', function () {
           skills.forEach(skill => animateSkill(skill.id, skill.percent, skill.color));
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.1 });
 
-    observer.observe(skillsSection);
+    observer.unobserve(skillsSection);
   }
 
   // Certificate Modal logic
