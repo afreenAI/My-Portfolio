@@ -367,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }, { threshold: 0.1 });
 
-    observer.unobserve(skillsSection);
+    observer.observe(skillsSection);
   }
 
   // Certificate Modal logic
