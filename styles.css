@@ -1,0 +1,293 @@
+/* styles.css */
+:where([class^="ri-"])::before {
+  content: "\f3c2";
+}
+
+.main-container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.calligraphic {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  /* example size */
+  font-weight: bold;
+  /* semi-bold */
+  color: #38358e;
+  /* example indigo-950 color */
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.hero-gradient {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  transform: scale(1.05);
+}
+
+.education-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.education-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-card-new {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-card-new:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+}
+.skill-tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.icon-sm {
+  width: 18px;
+  height: 18px;
+}
+
+
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+}
+
+/* Certificates Section */
+.certificates-section {
+  padding: 5rem 1rem;
+  background-color: #f9f9fc;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.section-subtitle {
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-underline {
+  width: 80px;
+  height: 4px;
+  background-color: #4f46e5; /* Primary color */
+  margin: 1rem auto 0;
+  border-radius: 999px;
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.certificate-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: scale(1.05);
+}
+
+.certificate-image-wrapper {
+  height: 220px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.certificate-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.certificate-info {
+  padding: 1.5rem;
+}
+
+.certificate-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.certificate-description {
+  margin: 0.75rem 0;
+  color: #4b5563;
+}
+
+.view-certificate-btn {
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Modal Styles */
+.certificate-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+}
+
+.certificate-modal.show {
+  display: flex;
+}
+
+.certificate-modal-content {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  animation: scaleIn 0.3s ease;
+}
+
+.modal-certificate-img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+}
+
+#activities .hover\:shadow-xl:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+#activities .grid > div:last-child:nth-child(odd) {
+  justify-self: center;  /* center the odd card */
+  grid-column:auto;     /* don't force full width */
+}
+
+
+/* Animation */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+footer {
+  background-color: rgba(17, 24, 39, 0.95); /* equivalent to bg-gray-900 with some transparency */
+  position: relative;
+  z-index: 1;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* ensures it's behind everything */
+  background: transparent;
+  pointer-events: none; /* allows users to interact with content above */
+}
+
+
