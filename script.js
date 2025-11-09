@@ -1,0 +1,344 @@
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', function () {
+      mobileMenu.classList.toggle('active');
+      // Toggle icon
+      const icon = mobileMenuButton.querySelector('i');
+      if (mobileMenu.classList.contains('active')) {
+        icon.classList.remove('ri-menu-line');
+        icon.classList.add('ri-close-line');
+      } else {
+        icon.classList.remove('ri-close-line');
+        icon.classList.add('ri-menu-line');
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        mobileMenu.classList.remove('active');
+        const icon = mobileMenuButton.querySelector('i');
+        icon.classList.remove('ri-close-line');
+        icon.classList.add('ri-menu-line');
+      });
+    });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const headerOffset = 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  //TypeIt
+  new TypeIt("#typing-text", {
+    speed: 20,
+    loop: true,
+    breakLines: false
+  })
+    .type("Undergraduate Data Science Student")
+    .pause(1000)
+    .delete()
+    .type("Tech Enthusiast")
+    .pause(1000)
+    .delete()
+    .type("Problem Solver")
+    .pause(1000)
+    .delete()
+    .type("Creative Coder")
+    .pause(1000)
+    .delete()
+    .type("Explorer of New Ideas")
+    .pause(1000)
+    .delete()
+    .go();
+
+  // Popup message function for success/error
+  function showPopupMessage(message, type = 'success') {
+    // Remove existing popup
+    const existingPopup = document.querySelector('.popup-message');
+    if (existingPopup) existingPopup.remove();
+
+    const popup = document.createElement('div');
+    popup.classList.add(
+      'popup-message',
+      'fixed',
+      'top-5',
+      'left-1/2',
+      'transform',
+      '-translate-x-1/2',
+      'px-6',
+      'py-3',
+      'rounded',
+      'shadow-lg',
+      'text-white',
+      'font-semibold',
+      'z-50',
+      'transition-opacity',
+      'duration-500',
+      'pointer-events-none'
+    );
+
+    // Set message text
+    popup.textContent = message;
+
+    // Apply background based on type
+    if (type === 'success') {
+      popup.classList.add('bg-green-600');
+    } else if (type === 'error') {
+      popup.classList.add('bg-red-600');
+    } else {
+      popup.classList.add('bg-gray-600');
+    }
+
+    // Initially hidden
+    popup.style.opacity = '0';
+
+    // Append to DOM
+    document.body.appendChild(popup);
+
+    // Fade in
+    setTimeout(() => {
+      popup.style.opacity = '1';
+      popup.style.pointerEvents = 'auto';
+    }, 50);
+
+    // Fade out after 3s and remove
+    setTimeout(() => {
+      popup.style.opacity = '0';
+      popup.style.pointerEvents = 'none';
+      setTimeout(() => {
+        popup.remove();
+      }, 500);
+    }, 3000);
+  }
+
+  // Form validation and AJAX submission
+  const contactForm = document.querySelector('#contact form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const subject = document.getElementById('subject');
+      const message = document.getElementById('message');
+
+      let isValid = true;
+
+      if (!name.value.trim()) {
+        highlightError(name);
+        isValid = false;
+      } else {
+        removeError(name);
+      }
+
+      if (!email.value.trim() || !isValidEmail(email.value)) {
+        highlightError(email);
+        isValid = false;
+      } else {
+        removeError(email);
+      }
+
+      if (!subject.value.trim()) {
+        highlightError(subject);
+        isValid = false;
+      } else {
+        removeError(subject);
+      }
+
+      if (!message.value.trim()) {
+        highlightError(message);
+        isValid = false;
+      } else {
+        removeError(message);
+      }
+
+      if (!isValid) {
+        // no popup on invalid form, just prevent submission
+        return;
+      }
+
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalButtonHTML = submitButton.innerHTML;
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<span class="w-5 h-5 flex items-center justify-center mr-2"><i class="ri-loader-4-line animate-spin"></i></span> Sending...';
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          contactForm.reset();
+          showPopupMessage('Your message has been sent successfully! I will get back to you soon.', 'success');
+        } else {
+          showPopupMessage('Oops! Something went wrong. Please try again later.', 'error');
+        }
+      } catch (error) {
+        showPopupMessage('Network error. Please check your connection.', 'error');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonHTML;
+      }
+    });
+
+    function highlightError(element) {
+      element.classList.add('border-red-500', 'bg-red-50');
+    }
+
+    function removeError(element) {
+      element.classList.remove('border-red-500', 'bg-red-50');
+    }
+
+    function isValidEmail(email) {
+      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    }
+
+    const formInputs = contactForm.querySelectorAll('input, textarea');
+    formInputs.forEach(input => {
+      input.addEventListener('input', function () {
+        removeError(this);
+      });
+    });
+  }
+
+  // Toggle projects button
+  const btn = document.getElementById('toggle-projects');
+  const hiddenProjects = document.querySelectorAll('.hidden-project');
+  let isExpanded = false;
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      if (!isExpanded) {
+        hiddenProjects.forEach(proj => proj.style.display = 'block');
+        btn.querySelector('span').textContent = 'Show Less';
+        isExpanded = true;
+      } else {
+        hiddenProjects.forEach(proj => proj.style.display = 'none');
+        btn.querySelector('span').textContent = 'View All Projects';
+        isExpanded = false;
+      }
+    });
+  }
+
+  // Certificate Modal logic
+  function openCertificateModal(imagePath) {
+    const modal = document.getElementById('certificateModal');
+    const modalImage = document.getElementById('certificateModalImage');
+    modalImage.src = imagePath;
+    modal.classList.remove('hidden');
+  }
+
+  function closeCertificateModal() {
+    const modal = document.getElementById('certificateModal');
+    modal.classList.add('hidden');
+  }
+
+  // Toggle certificates (like projects)
+const certBtn = document.getElementById('toggle-certificates');
+const hiddenCertificates = document.querySelectorAll('.hidden-certificate');
+let certExpanded = false;
+
+if (certBtn) {
+  certBtn.addEventListener('click', () => {
+    if (!certExpanded) {
+      hiddenCertificates.forEach(cert => cert.style.display = 'block');
+      certBtn.querySelector('span').textContent = 'Show Less';
+      certExpanded = true;
+    } else {
+      hiddenCertificates.forEach(cert => cert.style.display = 'none');
+      certBtn.querySelector('span').textContent = 'View All Certificates';
+      certExpanded = false;
+    }
+  });
+}
+
+  // Make functions globally accessible if called from HTML buttons
+  window.openCertificateModal = openCertificateModal;
+  window.closeCertificateModal = closeCertificateModal;
+
+  // Animate education cards on scroll
+  const eduCards = document.querySelectorAll('.education-card');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        eduCards.forEach((card, index) => {
+          setTimeout(() => {
+            card.classList.add('visible');
+          }, index * 300); // 300ms stagger delay
+        });
+      } else {
+        eduCards.forEach(card => {
+          card.classList.remove('visible');
+        });
+      }
+    });
+  }, {
+    threshold: 0.4
+  });
+
+  const educationSection = document.querySelector('#education');
+  if (educationSection) {
+    observer.observe(educationSection);
+  }
+
+  // Scroll animations for all sections
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('[data-animate]').forEach((el) => scrollObserver.observe(el));
+});
+// === Interactive Tilt for About Me Image ===
+const aboutCard = document.querySelector('.about-card');
+if (aboutCard) {
+  aboutCard.addEventListener('mousemove', (e) => {
+    const rect = aboutCard.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const rotateY = ((x / rect.width) - 0.5) * 20; // tilt intensity
+    const rotateX = ((y / rect.height) - 0.5) * -15;
+    aboutCard.querySelector('.about-tilt').style.transform =
+      `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.05)`;
+  });
+
+  aboutCard.addEventListener('mouseleave', () => {
+    aboutCard.querySelector('.about-tilt').style.transform =
+      'rotateY(0deg) rotateX(0deg) scale(1)';
+  });
+}
+
+
+
+
